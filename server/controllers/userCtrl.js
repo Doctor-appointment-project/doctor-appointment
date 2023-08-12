@@ -1,7 +1,7 @@
 const userModel = require("../models/userModel");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const secretkey="abhishekshukla1234567890rishabhshukla"
+const secretkey=process.env.SECRET_KEY
 const doctorModel=require("../models/docterModel")
 const appointmentModel=require("../models/appointmentModel")
 const moment=require("moment")
@@ -28,8 +28,6 @@ const registerController = async (req, res) => {
     });
   }
 };
-
-// login callback
 const loginController = async (req, res) => {
   try {
     const user = await userModel.findOne({ email: req.body.email });

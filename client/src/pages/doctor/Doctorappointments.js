@@ -29,6 +29,7 @@ const DoctorAppointments = () => {
   }, []);
 
   const handleStatus = async (record, status) => {
+    
     try {
       const res = await axios.post(
         "/api/v1/doctor/update-status",
@@ -48,6 +49,7 @@ const DoctorAppointments = () => {
       message.error("Something Went Wrong");
     }
   };
+
 
   const columns = [
     {
@@ -83,7 +85,7 @@ const DoctorAppointments = () => {
               </button>
               <button
                 className="btn btn-danger ms-2"
-                onClick={() => handleStatus(record, "reject")}
+                onClick={() => handleStatus(record, "rejected")}
               >
                 Reject
               </button>

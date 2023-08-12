@@ -69,15 +69,21 @@ const Doctors = () => {
       dataIndex: "actions",
       render: (text, record) => (
         <div className="d-flex">
-          {record.status === "pending" ? (
-            <button
-              className="btn btn-success"
-              onClick={() => handleAccountStatus(record, "approved")}
-            >
-              Approve
-            </button>
-          ) : (
-            <button className="btn btn-danger">Reject</button>
+           {record.status === "pending" && (
+            <div className="d-flex">
+              <button
+                className="btn btn-success"
+                onClick={() => handleAccountStatus(record, "approved")}
+              >
+                Approved
+              </button>
+              <button
+                className="btn btn-danger ms-2"
+                onClick={() => handleAccountStatus(record, "rejected")}
+              >
+                Reject
+              </button>
+            </div>
           )}
         </div>
       ),

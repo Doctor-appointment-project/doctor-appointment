@@ -30,10 +30,13 @@ const Home = () => {
   }, []);
   return (
     <Layout>
-      <h1>Home</h1>
-      <Row>
-        {doctors && doctors.map((doctor) => <DoctorList doctor={doctor} />)}
-      </Row>
+      <h1 style={{display:"flex",justifyContent:"center"}}>Home</h1>
+      {doctors.length?<Row>
+        {doctors.map((doctor) => <DoctorList doctor={doctor} />)}
+      </Row>:<div style={{display:"flex",justifyContent:"center",marginTop:"45px"}}>
+        <h3 style={{color:"blue"}}>No doctors</h3>
+        </div>}
+      
     </Layout>
   )
 }

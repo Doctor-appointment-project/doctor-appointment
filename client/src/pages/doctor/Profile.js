@@ -13,8 +13,7 @@ const Profile = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const params = useParams();
-  // update doc ==========
-  //handle form
+
   const handleFinish = async (values) => {
     try {
       dispatch(showLoading());
@@ -47,9 +46,7 @@ const Profile = () => {
       message.error("Somthing Went Wrrong ");
     }
   };
-  // update doc ==========
 
-  //getDOc Details
   const getDoctorInfo = async () => {
     try {
       const res = await axios.post(

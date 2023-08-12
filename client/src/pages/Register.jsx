@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/RegiserStyles.css";
-import { Button, Form, Input, message } from "antd";
+import {  Form, Input, message } from "antd";
 import axios from "axios";
 import {useDispatch} from 'react-redux'
 import { showLoading,hideLoading } from "../redux/featurs/alert";
